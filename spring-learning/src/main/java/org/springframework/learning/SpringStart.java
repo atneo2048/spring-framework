@@ -4,6 +4,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.learning.bean.UserBean;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * @author Neo-HJ.Niu
  * @created 2024/03/31  18:30
@@ -15,6 +17,7 @@ public class SpringStart {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 		UserBean user = applicationContext.getBean("user", UserBean.class);
 		System.out.println(user.toString());
-
+		AtomicInteger atomicInteger = new AtomicInteger();
+		atomicInteger.incrementAndGet();
 	}
 }
